@@ -13,3 +13,6 @@ services:
         - composer create-project --prefer-dist laravel/laravel blog
         
         - ln -snf "${TUGBOAT_ROOT}/blog/public" "${DOCROOT}"
+        
+        - chown -R www-data blog/storage blog/bootstrap/cache
+        - chmod -R 744 blog/storage blog/bootstrap/cache
