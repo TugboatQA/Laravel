@@ -12,4 +12,4 @@ services:
         - composer global require "laravel/installer"
         - composer create-project --prefer-dist laravel/laravel blog
         
-        - ln -snf "${TUGBOAT_ROOT}/blog" "${DOCROOT}"
+        - ln -snf "${TUGBOAT_ROOT}/blog/public" "${DOCROOT}"
