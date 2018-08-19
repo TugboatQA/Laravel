@@ -4,3 +4,9 @@ services:
     default: true
     commands:
       init:
+        - apt-get update
+        - apt-get install -y libzip-dev mysql-client
+        - pecl install zip
+        - docker-php-ext-enable zip
+        
+        - composer global require "laravel/installer"
