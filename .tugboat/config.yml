@@ -9,6 +9,8 @@ services:
         - pecl install zip
         - docker-php-ext-enable zip
         
+        - a2enmod headers rewrite
+        
         - composer global require "laravel/installer"
         - composer create-project --prefer-dist laravel/laravel blog
         
