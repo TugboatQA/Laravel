@@ -5,8 +5,11 @@ services:
     commands:
       init:
         - apt-get update
-        - apt-get install -y libzip-dev mysql-client
+        - apt-get install -y libzip-dev
         - pecl install zip
         - docker-php-ext-enable zip
         
         - composer global require "laravel/installer"
+        - composer create-project --prefer-dist laravel/laravel blog
+        
+        - ln -snf "${TUGBOAT_ROOT}/blog" "${DOCROOT}"
