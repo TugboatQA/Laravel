@@ -13,6 +13,8 @@ services:
         
         - composer global require "laravel/installer"
         - composer create-project --prefer-dist laravel/laravel blog
+        # Alternatively, let's make laravel command available
+        - ln -sf ~/.composer/vendor/bin/laravel /usr/local/bin/laravel
         
         - ln -snf "${TUGBOAT_ROOT}/blog/public" "${DOCROOT}"
         
